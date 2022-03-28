@@ -44,3 +44,10 @@
   font-family: "Amiri", serif;
   margin-bottom: 25px;
 }
+
+.remove-button {
+  border: none;
+  background-color: black;
+  padding: 10px;
+  cursor: pointer;
+}

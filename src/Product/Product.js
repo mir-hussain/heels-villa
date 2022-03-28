@@ -1,5 +1,6 @@
 import React from "react";
 import "./Product.css";
+import { BsCartPlus } from "react-icons/bs";
 
 const Product = ({ product, handleAddToCart }) => {
   const { name, pairImage, color, price } = product;
@@ -16,7 +17,9 @@ const Product = ({ product, handleAddToCart }) => {
           <small>$ {price}</small>
         </div>
         <div>
-          <button onClick={() => handleAddToCart(product)}>Buy</button>
+          <button onClick={() => handleAddToCart(product)}>
+            <BsCartPlus size={25} />
+          </button>
         </div>
       </div>
     </div>

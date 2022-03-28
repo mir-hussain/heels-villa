@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
-import { addToLocalStorage } from "../Utils/Utils";
+import {
+  addToLocalStorage,
+  getFromLocalStorage,
+  clearLocalStorage,
+} from "../Utils/Utils";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -12,6 +16,24 @@ const Shop = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+  useEffect(() => {
+    if (products.length) {
+      const storedProductIds = getFromLocalStorage();
+
+      const previousCart = [];
+
+      for (const id in storedProductIds) {
+        const foundProduct = products.find((product) => product.id === id);
+        if (foundProduct) {
+          const quantity = storedProductIds[id];
+          foundProduct.quantity = quantity;
+          previousCart.push(foundProduct);
+        }
+      }
+      setCart(previousCart);
+    }
+  }, [products]);
 
   const handleAddToCart = (selectedProduct) => {
     let newCart = [];
@@ -28,11 +50,13 @@ const Shop = () => {
       newCart = [...rest, selectedProduct];
     }
 
+    addToLocalStorage(selectedProduct.id);
     setCart(newCart);
   };
 
   const handleClearCart = () => {
     setCart([]);
+    clearLocalStorage();
   };
 
   return (
