@@ -4,7 +4,6 @@ import "./Cart.css";
 const Cart = ({ cart, products, handleClearCart }) => {
   const [offer, setOffer] = useState(false);
   const [freeProduct, setFreeProduct] = useState({});
-  console.log(cart);
 
   useEffect(() => {
     if (cart.length > 0) {
@@ -34,6 +33,7 @@ const Cart = ({ cart, products, handleClearCart }) => {
               {product.name} {product.color}
             </p>
             <p>$ {product.price}</p>
+            <p>quantity: {product.quantity}</p>
           </div>
         </div>
       ))}
