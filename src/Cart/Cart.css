@@ -25,6 +25,7 @@
   font-size: 2rem;
   font-family: "Amiri", serif;
   cursor: pointer;
+  margin-bottom: 25px;
 }
 
 .offer-button-disabled {
@@ -35,4 +36,5 @@
   height: 50px;
   font-size: 2rem;
   font-family: "Amiri", serif;
+  margin-bottom: 25px;
 }
