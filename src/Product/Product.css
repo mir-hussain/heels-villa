@@ -1,0 +1,13 @@
+.product-card {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  height: 500px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.product-card > .image-container > img {
+  height: 300px;
+  width: 300px;
+}
