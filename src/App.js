@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Navbar from "./Navbar/Navbar";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div>
+      <Navbar />
       {products.map((item) => {
         return (
           <div>
