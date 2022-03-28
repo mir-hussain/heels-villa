@@ -2,12 +2,35 @@
   background-color: black;
   border: 1px solid black;
   color: white;
-  height: 500px;
+  height: 400px;
   width: 300px;
   overflow: hidden;
+  justify-self: center;
 }
 
 .product-card > .image-container > img {
   height: 300px;
   width: 300px;
+}
+
+.product-info {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-info div p {
+  font-size: 1.2rem;
+}
+
+.product-info div small {
+  font-size: 1rem;
+}
+
+.product-info div button {
+  height: 50px;
+  width: 50px;
+  border: none;
+  cursor: pointer;
 }

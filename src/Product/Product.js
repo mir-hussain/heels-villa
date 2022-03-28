@@ -10,10 +10,10 @@ const Product = ({ product }) => {
       </div>
       <div className='product-info'>
         <div>
-          <h1>
+          <p>
             {name} {color}
-          </h1>
-          <p>$ {price}</p>
+          </p>
+          <small>$ {price}</small>
         </div>
         <div>
           <button>Buy</button>
