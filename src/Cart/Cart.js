@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./Cart.css";
 
-const Cart = ({ cart, products }) => {
+const Cart = ({ cart, products, handleClearCart }) => {
   const [offer, setOffer] = useState(false);
   const [freeProduct, setFreeProduct] = useState({});
-  console.log(freeProduct);
+  console.log(cart);
 
   useEffect(() => {
     if (cart.length > 0) {
       setOffer(true);
+    } else {
+      setOffer(false);
     }
-  }, [cart.length]);
+  }, [cart]);
 
   const handleOffer = () => {
     const randomNumber = Math.floor(Math.random() * products.length);
@@ -20,7 +22,10 @@ const Cart = ({ cart, products }) => {
 
   return (
     <div className='cart'>
-      <h1>Order Summery</h1>
+      <div className='cart-header'>
+        <h1>Order Summery</h1>
+        <button onClick={handleClearCart}>del</button>
+      </div>
       {cart.map((product, index) => (
         <div key={index} className='cart-item'>
           <img src={product.pairImage} alt='' />

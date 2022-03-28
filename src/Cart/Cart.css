@@ -3,6 +3,12 @@
   top: 0;
 }
 
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .cart-item {
   display: flex;
   align-items: center;
